@@ -196,4 +196,18 @@ public class SavingAccountTest {
 
         Assertions.assertEquals(10_000, account.getMaxBalance());
     }
+
+    @Test
+    public void testPayLessSum() {
+        SavingAccount account = new SavingAccount(
+                1_500,
+                1_000,
+                10_000,
+                5
+        );
+
+        account.pay(-2_500);
+
+        Assertions.assertEquals(1_500, account.getBalance());
+    }
 }
