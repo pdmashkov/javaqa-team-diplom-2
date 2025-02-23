@@ -149,10 +149,10 @@ public class SavingAccountTest {
                 10_000,
                 5
         );
+        int expected = 250;
+        int actual = account.yearChange();
 
-        account.yearChange();
-
-        Assertions.assertEquals(5_250, account.getBalance());
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
