@@ -37,6 +37,10 @@ public class SavingAccount extends Account {
             throw new IllegalArgumentException(
                     "Минимальный баланс не может быть отрицательным"
             );
+        } else if (maxBalance < 0) {
+            throw new IllegalArgumentException(
+                    "Максимальный баланс не может быть отрицательным"
+            );
         }
 
         this.balance = initialBalance;
