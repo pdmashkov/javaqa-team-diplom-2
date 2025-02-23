@@ -28,9 +28,11 @@ public class SavingAccountTest {
                 5
         );
 
-        account.add(3_000);
+        boolean expected = false;
+        boolean actual = account.add(3_000);
 
-        Assertions.assertEquals(3_000, account.getBalance());
+        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(3000, account.getBalance());
     }
 
     @Test
@@ -42,8 +44,10 @@ public class SavingAccountTest {
                 5
         );
 
-        account.add(500);
+        boolean expected = false;
+        boolean actual = account.add(500);
 
+        Assertions.assertEquals(expected, actual);
         Assertions.assertEquals(0, account.getBalance());
     }
 
@@ -114,8 +118,10 @@ public class SavingAccountTest {
                 5
         );
 
-        account.pay(2_000);
+        boolean expected = false;
+        boolean actual = account.pay(2_000);
 
+        Assertions.assertEquals(expected, actual);
         Assertions.assertEquals(1_500, account.getBalance());
     }
 
@@ -128,8 +134,10 @@ public class SavingAccountTest {
                 5
         );
 
-        account.pay(20_000);
+        boolean expected = false;
+        boolean actual = account.pay(20_000);
 
+        Assertions.assertEquals(expected, actual);
         Assertions.assertEquals(1_500, account.getBalance());
     }
 
@@ -206,8 +214,10 @@ public class SavingAccountTest {
                 5
         );
 
-        account.pay(-2_500);
+        boolean expected = false;
+        boolean actual = account.pay(-2_500);
 
+        Assertions.assertEquals(expected, actual);
         Assertions.assertEquals(1_500, account.getBalance());
     }
 }
