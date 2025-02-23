@@ -29,7 +29,7 @@ public class SavingAccount extends Account {
             throw new IllegalArgumentException(
                     "Минимальный баланс больше максимального баланса"
             );
-        } else if(initialBalance < 0){
+        } else if (initialBalance < 0) {
             throw new IllegalArgumentException(
                     "Баланс не может быть отрицательным"
             );
@@ -64,8 +64,8 @@ public class SavingAccount extends Account {
         if (amount <= 0) {
             return false;
         }
-        balance = balance - amount;
-        if (balance > minBalance) {
+        if ((balance - amount) > minBalance) {
+            balance = balance - amount;
             return true;
         } else {
             return false;
