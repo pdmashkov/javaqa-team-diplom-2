@@ -93,10 +93,16 @@ public class CreditAccountTest {
     public void shouldBeFailedPay() {
         CreditAccount creditAccount = new CreditAccount(0, 10_000, 71);
 
+        int expectedInitBalance = creditAccount.getBalance();
+
         boolean expected = false;
         boolean actual = creditAccount.pay(12_700);
 
         Assertions.assertEquals(expected, actual);
+
+        int actualBalance = creditAccount.getBalance();
+
+        Assertions.assertEquals(expectedInitBalance, actualBalance);
     }
 
     @Test
@@ -127,10 +133,16 @@ public class CreditAccountTest {
     public void shouldBeFailedAddBalance() {
         CreditAccount creditAccount = new CreditAccount(0, 0, 10);
 
+        int expectedInitBalance = creditAccount.getBalance();
+
         boolean expected = false;
         boolean actual = creditAccount.add(-10_000);
 
         Assertions.assertEquals(expected, actual);
+
+        int actualBalance = creditAccount.getBalance();
+
+        Assertions.assertEquals(expectedInitBalance, actualBalance);
     }
 
     @Test
